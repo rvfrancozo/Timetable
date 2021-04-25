@@ -1,4 +1,3 @@
-
 public class InstanceModel {
 
 	private String disciplina;
@@ -52,7 +51,6 @@ public class InstanceModel {
 	public void setArea(String area) {
 		this.area = area;
 	}
-	
 	public int[] getModulo() {
 		return modulo;
 	}
