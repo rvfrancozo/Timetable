@@ -2,12 +2,11 @@ package Population;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import InstanceLoader.*;
-import SoftConstraints.*;
 
 public class Populate {
 	SecureRandom random = new SecureRandom();
 
-	public ArrayList<InstanceModel> Populate(ArrayList<InstanceModel> valores) {
+	public ArrayList<InstanceModel> Pop(ArrayList<InstanceModel> valores) {
 
 		int i = 0;
 
@@ -54,10 +53,10 @@ public class Populate {
 		return valores;
 	}
 
-	private void print(ArrayList<InstanceModel> valores) {
+	public void print(ArrayList<InstanceModel> values) {
 		try {
 			System.out.println("Prof.\tDisc.\tM1\tM2\tM3\tM4\tM5");
-			for (InstanceModel m : valores) {
+			for (InstanceModel m : values) {
 				System.out.println(
 						m.getDocente().substring(0, m.getDocente().length() > 6 ? 6 : m.getDocente().length()) + "\t"
 						+ m.getDisciplina().substring(0, m.getDisciplina().length() > 6 ? 6 : m.getDisciplina().length())

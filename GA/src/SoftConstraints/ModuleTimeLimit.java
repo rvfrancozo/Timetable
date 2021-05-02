@@ -1,7 +1,6 @@
 package SoftConstraints;
 import java.util.ArrayList;
 import InstanceLoader.*;
-import Population.*;
 
 public class ModuleTimeLimit implements SoftConstraints {
 
@@ -13,7 +12,7 @@ public class ModuleTimeLimit implements SoftConstraints {
 
 		
 		int[] s = {0,0,0,0,0};
-		int tmp = 0;
+//		int tmp = 0;
 		String docente = null;
 
 		for(InstanceModel m : timetable) {
