@@ -1,3 +1,4 @@
+package InstanceLoader;
 public class InstanceModel {
 
 	private String disciplina;
@@ -8,7 +9,7 @@ public class InstanceModel {
 	private String turma;
 	private String area;
 	private int[] modulo;
-	
+
 	public String getDisciplina() {
 		return disciplina;
 	}

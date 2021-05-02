@@ -1,12 +1,13 @@
+package Population;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import InstanceLoader.*;
+import SoftConstraints.*;
 
 public class Populate {
 	SecureRandom random = new SecureRandom();
 
-	public Populate() {
-
-		ArrayList<InstanceModel> valores = new InstanceControl().loader("instancia.csv");
+	public ArrayList<InstanceModel> Populate(ArrayList<InstanceModel> valores) {
 
 		int i = 0;
 
@@ -39,6 +40,7 @@ public class Populate {
 					}
 
 					valores.get(i).setModulo(m);
+					
 
 					i++;
 				} while (valores.get(i - 1).getDocente().equals(valores.get(i).getDocente()));
@@ -46,24 +48,26 @@ public class Populate {
 
 		} catch (Exception e) {
 		}
-		print(valores);
+		
+		//print(valores);
+		
+		return valores;
 	}
 
 	private void print(ArrayList<InstanceModel> valores) {
-		System.out.println("Prof.\tDisc.\tM1\tM2\tM3\tM4\tM5");
-		for (InstanceModel m : valores) {
-			System.out.println(
-					m.getDocente().substring(0, m.getDocente().length() > 6 ? 6 : m.getDocente().length()) + "\t"
-					+ m.getDisciplina().substring(0, m.getDisciplina().length() > 6 ? 6 : m.getDisciplina().length())
-					+ "\t" + m.getModulo()[0] 
-				    + "\t" + m.getModulo()[1] 
-				    + "\t" + m.getModulo()[2] 
-				    + "\t" + m.getModulo()[3] 
-				    + "\t" + m.getModulo()[4] + "\t");
-		}
-		System.out.println("Score: " + new FitnessCalculator().calculator(valores));
+		try {
+			System.out.println("Prof.\tDisc.\tM1\tM2\tM3\tM4\tM5");
+			for (InstanceModel m : valores) {
+				System.out.println(
+						m.getDocente().substring(0, m.getDocente().length() > 6 ? 6 : m.getDocente().length()) + "\t"
+						+ m.getDisciplina().substring(0, m.getDisciplina().length() > 6 ? 6 : m.getDisciplina().length())
+						+ "\t" + m.getModulo()[0] 
+					    + "\t" + m.getModulo()[1] 
+					    + "\t" + m.getModulo()[2] 
+					    + "\t" + m.getModulo()[3] 
+					    + "\t" + m.getModulo()[4] + "\t");
+			}
+		} catch(Exception e) {}
+		
 	}
-
-
-
 }

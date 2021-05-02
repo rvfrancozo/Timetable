@@ -1,4 +1,7 @@
+package SoftConstraints;
 import java.util.ArrayList;
+import InstanceLoader.*;
+import Population.*;
 
 public class NoConstraint implements SoftConstraints {
 
