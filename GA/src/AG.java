@@ -20,7 +20,7 @@ public class AG {
 		
 		//Carrega a Instância
 		values = new InstanceControl().loader("instancia.csv");
-		
+
 		//Gera População
 		pop = new GenPopulation().gen(values);
 		

@@ -17,8 +17,7 @@ public class InstanceControl {
 			input.nextLine();
 			
 			while(input.hasNext()) {
-				String[] data = input.nextLine().split(",");
-				
+				String[] data = input.nextLine().split(";");
 				InstanceModel dados = new InstanceModel();
 				
 				dados.setDisciplina(data[0]);
