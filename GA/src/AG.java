@@ -37,9 +37,6 @@ public class AG {
 		//Realiza Mutação
 		cross = new Mutation().cross(cross);
 		
-		//Avalia a Solução
-		score = new FitnessCalculator().calculator(cross);
-		
 		//Atualiza a População
 		pop = new UpdatePopulation().up(pop, cross);
 
