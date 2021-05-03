@@ -12,7 +12,6 @@ public class ModuleTimeLimit implements SoftConstraints {
 
 		
 		int[] s = {0,0,0,0,0};
-//		int tmp = 0;
 		String docente = null;
 
 		for(InstanceModel m : timetable) {
@@ -23,8 +22,6 @@ public class ModuleTimeLimit implements SoftConstraints {
 			
 			else {
 				docente = m.getDocente();
-				//for(int i = 0; i <= 4; i++) System.out.print(s[i] + "-");
-				//for(int i = 0; i <= 4; i++) score += (s[i]>80?s[i]-80:0);
 				for(int i = 0; i <= 4; i++) {
 					if(s[i] > 80)
 						score = score + (s[i]-80);
@@ -32,7 +29,6 @@ public class ModuleTimeLimit implements SoftConstraints {
 				for(int i = 0; i <= 4; i++) s[i] = 0;
 				for(int i = 0; i <= 4; i++) s[i] = m.getModulo()[i];
 			}
-			
 		}
 		
 		return score + next.calculator(timetable);

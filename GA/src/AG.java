@@ -27,6 +27,7 @@ public class AG {
 		
 		//Obtém a Melhor solução
 		best = new GetBestSolution().getSolution(pop);
+		System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
 
 		//Seleciona os Ancestrais
 		ancestors = new Ancestors().getAncestor(pop);
@@ -45,6 +46,6 @@ public class AG {
 
 		//Show Best Solution
 		new Populate().print(best);
-		
+		System.out.println("Score Final: " + new FitnessCalculator().calculator(best));
 	}
 }
