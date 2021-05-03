@@ -15,7 +15,6 @@ public class AG {
 	private static ArrayList<InstanceModel> best; 
 	private static ArrayList<ArrayList<InstanceModel>> ancestors; 
 	private static ArrayList<InstanceModel> cross; 
-	private static int score;
 
 	public static void main(String[] args) {
 		
