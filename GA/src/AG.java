@@ -18,7 +18,7 @@ public class AG {
 
 	public static void main(String[] args) {
 		
-		//Carrega a Instância
+		//Carrega a Instância ---
 		values = new InstanceControl().loader("instancia.csv");
 
 		//Gera População
