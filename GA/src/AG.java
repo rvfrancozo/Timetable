@@ -24,7 +24,7 @@ public class AG {
 		//Gera População
 		pop = new GenPopulation().gen(values);
 		
-		for(int i = 0; i < 1000; i++) {
+		//do {
 		//Obtém a Melhor solução
 		best = new GetBestSolution().getSolution(pop);
 		//System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
@@ -43,11 +43,9 @@ public class AG {
 		//Atualiza a População
 		pop = new UpdatePopulation().up(pop, cross);
 		
-		
-
 		//Show Best Solution
 		//new Populate().print(best);
 		System.out.println("Score: " + new FitnessCalculator().calculator(best));
-		}
+		//} while(new FitnessCalculator().calculator(best) > 600);
 	}
 }
