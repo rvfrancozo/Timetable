@@ -18,5 +18,4 @@ public class Ancestors {
 		
 		return ancestors;
 	}
-
 }

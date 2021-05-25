@@ -24,9 +24,10 @@ public class AG {
 		//Gera População
 		pop = new GenPopulation().gen(values);
 		
+		for(int i = 0; i < 1000; i++) {
 		//Obtém a Melhor solução
 		best = new GetBestSolution().getSolution(pop);
-		System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
+		//System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
 
 		//Seleciona os Ancestrais
 		ancestors = new Ancestors().getAncestor(pop);
@@ -37,11 +38,16 @@ public class AG {
 		//Realiza Mutação
 		cross = new Mutation().cross(cross);
 		
+		//System.out.println("Score Cross: " + new FitnessCalculator().calculator(cross));
+		
 		//Atualiza a População
 		pop = new UpdatePopulation().up(pop, cross);
+		
+		
 
 		//Show Best Solution
-		new Populate().print(best);
-		System.out.println("Score Final: " + new FitnessCalculator().calculator(best));
+		//new Populate().print(best);
+		System.out.println("Score: " + new FitnessCalculator().calculator(best));
+		}
 	}
 }

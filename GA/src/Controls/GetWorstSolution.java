@@ -10,6 +10,7 @@ public class GetWorstSolution {
 
 	public ArrayList<InstanceModel> getSolution(ArrayList<ArrayList<InstanceModel>> pop) {
 		ArrayList<InstanceModel> best = new ArrayList<InstanceModel>();
+		
 		for(ArrayList<InstanceModel> n : pop) {
 			int score = new FitnessCalculator().calculator(n);
 			if(score < tmp) {
