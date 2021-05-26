@@ -1,21 +1,22 @@
 package SoftConstraints;
-import java.util.ArrayList;
-import InstanceLoader.*;
 
-public class AvoidIdleModules implements SoftConstraints {
-	
+import java.util.ArrayList;
+
+import InstanceLoader.InstanceModel;
+
+public class SubjectsClassLimit  implements SoftConstraints {
+
 	private SoftConstraints next;
-	
+
 	@Override
 	public int calculator(ArrayList<InstanceModel> timetable) {
-		
-		return next.calculator(timetable);
+		int score = 0;
+		return score  + next.calculator(timetable);
 	}
 
 	@Override
 	public void setNext(SoftConstraints next) {
-		this.next = next;
-		
+		this.next = next;		
 	}
 
 }

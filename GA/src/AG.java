@@ -18,16 +18,22 @@ public class AG {
 
 	public static void main(String[] args) {
 		
+		int torneio = 30;
+		long tempoInicial = System.currentTimeMillis();
+
+
+
 		//Carrega a Instância ---
 		values = new InstanceControl().loader("instancia.csv");
 
 		//Gera População
 		pop = new GenPopulation().gen(values);
 		
-		//do {
 		//Obtém a Melhor solução
 		best = new GetBestSolution().getSolution(pop);
-		//System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
+		System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
+		
+		for(int i = 0; i < 100; i++) {
 
 		//Seleciona os Ancestrais
 		ancestors = new Ancestors().getAncestor(pop);
@@ -43,9 +49,15 @@ public class AG {
 		//Atualiza a População
 		pop = new UpdatePopulation().up(pop, cross);
 		
+		
+		
 		//Show Best Solution
 		//new Populate().print(best);
-		System.out.println("Score: " + new FitnessCalculator().calculator(best));
-		//} while(new FitnessCalculator().calculator(best) > 600);
+		long decorrido = System.currentTimeMillis() - tempoInicial;
+
+		System.out.println("Score Final: " + new FitnessCalculator().calculator(best) + " : " + decorrido);
+		
+		}
+
 	}
 }
