@@ -8,10 +8,12 @@ public class FitnessCalculator {
 		
 		SoftConstraints sf1 = new ModuleTimeLimit();
 		SoftConstraints sf2 = new SubjectsTeacherLimit();
+		SoftConstraints sf3 = new SubjectsClassLimit();
 		SoftConstraints terminator = new NoConstraint();
 		
 		sf1.setNext(sf2);
-		sf2.setNext(terminator);
+		sf2.setNext(sf3);
+		sf3.setNext(terminator);
 		
 		return sf1.calculator(timetable);
 		

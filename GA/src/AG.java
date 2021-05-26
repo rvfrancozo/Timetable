@@ -27,13 +27,13 @@ public class AG {
 		values = new InstanceControl().loader("instancia.csv");
 
 		//Gera População
-		pop = new GenPopulation().gen(values);
+		pop = new GenPopulation().gen(values, 100);
 		
 		//Obtém a Melhor solução
 		best = new GetBestSolution().getSolution(pop);
 		System.out.println("Score Inicial: " + new FitnessCalculator().calculator(best));
 		
-		for(int i = 0; i < 100; i++) {
+		do {
 
 		//Seleciona os Ancestrais
 		ancestors = new Ancestors().getAncestor(pop);
@@ -47,7 +47,7 @@ public class AG {
 		//System.out.println("Score Cross: " + new FitnessCalculator().calculator(cross));
 		
 		//Atualiza a População
-		pop = new UpdatePopulation().up(pop, cross);
+		pop = new UpdatePopulation().randomup(pop, cross);
 		
 		
 		
@@ -57,7 +57,7 @@ public class AG {
 
 		System.out.println("Score Final: " + new FitnessCalculator().calculator(best) + " : " + decorrido);
 		
-		}
+		} while(new FitnessCalculator().calculator(best) > 0);
 
 	}
 }
