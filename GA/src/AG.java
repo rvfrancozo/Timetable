@@ -18,7 +18,7 @@ public class AG {
 
 	public static void main(String[] args) {
 		
-		int torneio = 30;
+		//int torneio = 30;
 		long tempoInicial = System.currentTimeMillis();
 
 
