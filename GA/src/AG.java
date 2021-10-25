@@ -8,6 +8,7 @@ import InstanceLoader.InstanceControl;
 import InstanceLoader.InstanceModel;
 import SoftConstraints.*;
 import Population.*;
+import Controls.SaveSolution;
 
 public class AG {
 	private static ArrayList<InstanceModel> values;
@@ -20,8 +21,6 @@ public class AG {
 		
 		//int torneio = 30
 		long tempoInicial = System.currentTimeMillis();
-
-
 
 		//Carrega a Instância ---
 		values = new InstanceControl().loader("instancia.csv");
@@ -49,15 +48,14 @@ public class AG {
 		//Atualiza a População
 		pop = new UpdatePopulation().randomup(pop, cross);
 		
-		
-		
 		//Show Best Solution
 		//new Populate().print(best);
 		long decorrido = System.currentTimeMillis() - tempoInicial;
-
-		System.out.println("Score Final: " + new FitnessCalculator().calculator(best) + " : " + decorrido);
 		
+		System.out.printf("Score Final: %d : %.3f seconds\n", new FitnessCalculator().calculator(best), (decorrido * 0.001) );
+		new SaveSolution(best, "results.csv");
 		} while(new FitnessCalculator().calculator(best) > 0);
-
+		
+		new Populate().print(best);
 	}
 }

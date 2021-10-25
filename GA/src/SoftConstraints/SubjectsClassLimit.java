@@ -29,6 +29,7 @@ public class SubjectsClassLimit  implements SoftConstraints {
 			for(int i = 0; i < 5; i++) {
 				if(s[i] > n.getTotalOfSubjects() * 0.3 ) {
 					score += s[i]*10;
+					//score++;
 				}
 			}
 			for(int i = 0; i < 5; i++) s[i] = 0;

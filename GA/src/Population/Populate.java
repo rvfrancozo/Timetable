@@ -55,11 +55,13 @@ public class Populate {
 
 	public void print(ArrayList<InstanceModel> values) {
 		try {
-			System.out.println("Prof.\tDisc.\tM1\tM2\tM3\tM4\tM5");
+			System.out.println("Prof.\tDisc.\tCurso\tTurma\tM1\tM2\tM3\tM4\tM5");
 			for (InstanceModel m : values) {
 				System.out.println(
 						m.getDocente().substring(0, m.getDocente().length() > 6 ? 6 : m.getDocente().length()) + "\t"
 						+ m.getDisciplina().substring(0, m.getDisciplina().length() > 6 ? 6 : m.getDisciplina().length())
+						+ "\t" + m.getTurma()
+						+ "\t" + m.getArea().substring(0, m.getArea().length() > 6 ? 6 : m.getArea().length())
 						+ "\t" + m.getModulo()[0] 
 					    + "\t" + m.getModulo()[1] 
 					    + "\t" + m.getModulo()[2] 

@@ -25,6 +25,7 @@ public class ModuleTimeLimit implements SoftConstraints {
 				for(int i = 0; i <= 4; i++) {
 					if(s[i] > 80)
 						score = score + (s[i]-80);
+						//score++;
 				} 
 				for(int i = 0; i <= 4; i++) s[i] = 0;
 				for(int i = 0; i <= 4; i++) s[i] = m.getModulo()[i];
