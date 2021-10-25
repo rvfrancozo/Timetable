@@ -19,7 +19,7 @@ public class AG {
 
 	public static void main(String[] args) {
 		
-		//int torneio = 300
+		//int torneio = 60
 		long tempoInicial = System.currentTimeMillis();
 
 		//Carrega a Instância ---
