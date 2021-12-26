@@ -22,7 +22,7 @@ public class AG {
 		//int torneio = 6000
 		long tempoInicial = System.currentTimeMillis();
 
-		//Carrega a Instância ---
+		//Carrega a Instância 
 		values = new InstanceControl().loader("instancia.csv");
 
 		//Gera População
